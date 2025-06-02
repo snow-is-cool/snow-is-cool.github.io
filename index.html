@@ -1,179 +1,177 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hotsnow3241's Page</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-/* Custom styles for the body and container */
-body {
-/* Background image with fallback to white */
-background-image: url('background.png');
-background-size: cover; /* Cover the entire background */
-background-repeat: no-repeat; /* Do not repeat the image */
-background-attachment: fixed; /* Keep background fixed while scrolling */
-background-color: #FFFFFF; /* Fallback color set to white */
-font-family: 'Inter', sans-serif; /* Use Inter font */
-color: #333; /* Dark gray text color */
-text-align: center; /* Center align all text content */
-margin: 0; /* Remove default body margin */
-padding: 20px; /* Add padding around the content */
-min-height: 100vh; /* Ensure body takes at least full viewport height */
-display: flex; /* Use flexbox for centering content */
-justify-content: center; /* Center horizontally */
-align-items: flex-start; /* Align to the top vertically */
-box-sizing: border-box; /* Include padding in element's total width and height */
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotsnow3241's Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for the body and container */
+        body {
+            /* Background image with fallback to white */
+            background-image: url('background.png');
+            background-size: cover; /* Cover the entire background */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-attachment: fixed; /* Keep background fixed while scrolling */
+            background-color: #FFFFFF; /* Fallback color set to white */
+            font-family: 'Inter', sans-serif; /* Use Inter font */
+            color: #333; /* Dark gray text color */
+            text-align: center; /* Center align all text content */
+            margin: 0; /* Remove default body margin */
+            padding: 20px; /* Add padding around the content */
+            min-height: 100vh; /* Ensure body takes at least full viewport height */
+            display: flex; /* Use flexbox for centering content */
+            justify-content: center; /* Center horizontally */
+            align-items: flex-start; /* Align to the top vertically */
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
 
-.container {
-max-width: 960px; /* Increased max-width for more space for thumbnails */
-width: 100%; /* Make container fluid */
-margin-top: 20px; /* Margin from the top */
-padding: 30px; /* Increased padding inside the container */
-background-color: rgba(255, 255, 255, 0.4); /* Slightly opaque white background (alpha changed to 0.8) */
-border-radius: 16px; /* More rounded corners for the container */
-box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* More pronounced shadow for depth */
-box-sizing: border-box; /* Include padding in element's total width and height */
-}
+        .container {
+            max-width: 960px; /* Increased max-width for more space for thumbnails */
+            width: 100%; /* Make container fluid */
+            margin-top: 20px; /* Margin from the top */
+            padding: 30px; /* Increased padding inside the container */
+            background-color: rgba(255, 255, 255, 0.4); /* Slightly opaque white background (alpha changed to 0.8) */
+            border-radius: 16px; /* More rounded corners for the container */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* More pronounced shadow for depth */
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
 
-/* Styles for main titles (Hotsnow3241's Page) */
-h1 {
-font-size: 3.5rem; /* Very large font size for main title */
-font-weight: 800; /* Extra bold font weight */
-color: #1F2937; /* Darker text color */
-margin-top: 0; /* Remove default top margin */
-margin-bottom: 30px; /* Space below the main title */
-line-height: 1.1; /* Tighter line height for large text */
-}
+        /* Styles for main titles (Hotsnow3241's Page) */
+        h1 {
+            font-size: 3.5rem; /* Very large font size for main title */
+            font-weight: 800; /* Extra bold font weight */
+            color: #1F2937; /* Darker text color */
+            margin-top: 0; /* Remove default top margin */
+            margin-bottom: 30px; /* Space below the main title */
+            line-height: 1.1; /* Tighter line height for large text */
+        }
 
-/* Styles for profile image */
-.profile-image {
-width: 150px; /* Slightly larger fixed width for profile image */
-height: 150px; /* Slightly larger fixed height for profile image */
-border-radius: 50%; /* Make it circular */
-object-fit: cover; /* Cover the area without distortion */
-margin: 0 auto 25px auto; /* Center the image and add space below */
-border: 4px solid #60A5FA; /* Blue border around the profile picture */
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25); /* More prominent shadow for profile image */
-display: block; /* Ensure it behaves as a block element for centering */
-}
+        /* Styles for profile image */
+        .profile-image {
+            width: 150px; /* Slightly larger fixed width for profile image */
+            height: 150px; /* Slightly larger fixed height for profile image */
+            border-radius: 50%; /* Make it circular */
+            object-fit: cover; /* Cover the area without distortion */
+            margin: 0 auto 25px auto; /* Center the image and add space below */
+            border: 4px solid #60A5FA; /* Blue border around the profile picture */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25); /* More prominent shadow for profile image */
+            display: block; /* Ensure it behaves as a block element for centering */
+        }
 
-/* Container for multiple thumbnails */
-.thumbnails-grid {
-display: flex; /* Use flexbox for layout */
-flex-wrap: wrap; /* Allow items to wrap to the next line */
-justify-content: center; /* Center items horizontally */
-gap: 30px; /* Space between thumbnail items */
-margin-top: 40px; /* Space above the thumbnail grid */
-}
+        /* Container for multiple thumbnails */
+        .thumbnails-grid {
+            display: flex; /* Use flexbox for layout */
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+            justify-content: center; /* Center items horizontally */
+            gap: 30px; /* Space between thumbnail items */
+            margin-top: 40px; /* Space above the thumbnail grid */
+        }
 
-/* Styles for individual thumbnail blocks */
-.thumbnail-item {
-width: 100%; /* Default to full width on small screens */
-max-width: 400px; /* Max width for each thumbnail item */
-background-color: #f9fafb; /* Light background for each item */
-padding: 20px; /* Padding inside each item */
-border-radius: 12px; /* Rounded corners for each item */
-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Subtle shadow */
-transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions */
-box-sizing: border-box; /* Include padding in element's total width and height */
-display: flex; /* Use flexbox to organize content within the item */
-flex-direction: column; /* Stack content vertically */
-align-items: center; /* Center content horizontally within the item */
-}
+        /* Styles for individual thumbnail blocks */
+        .thumbnail-item {
+            width: 100%; /* Default to full width on small screens */
+            max-width: 400px; /* Max width for each thumbnail item */
+            background-color: #f9fafb; /* Light background for each item */
+            padding: 20px; /* Padding inside each item */
+            border-radius: 12px; /* Rounded corners for each item */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions */
+            box-sizing: border-box; /* Include padding in element's total width and height */
+            display: flex; /* Use flexbox to organize content within the item */
+            flex-direction: column; /* Stack content vertically */
+            align-items: center; /* Center content horizontally within the item */
+        }
 
-.thumbnail-item:hover {
-transform: translateY(-5px); /* Lift effect on hover */
-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
-}
+        .thumbnail-item:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+        }
 
-/* Styles for all simulation link images (default behavior) */
-.simulation-link img {
-width: 100%; /* Ensure image fills its container */
-height: auto; /* Allow height to adjust naturally based on aspect ratio */
-object-fit: contain; /* Ensure the whole image is visible, no cropping */
-border-radius: 10px; /* Rounded corners for the image */
-display: block; /* Ensures no extra space below image */
-margin-bottom: 15px; /* Space below the image */
-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Light shadow for the image */
-}
+        /* Styles for all simulation link images (default behavior) */
+        .simulation-link img {
+            width: 100%; /* Ensure image fills its container */
+            height: auto; /* Allow height to adjust naturally based on aspect ratio */
+            object-fit: contain; /* Ensure the whole image is visible, no cropping */
+            border-radius: 10px; /* Rounded corners for the image */
+            display: block; /* Ensures no extra space below image */
+            margin-bottom: 15px; /* Space below the image */
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Light shadow for the image */
+        }
 
-/* Specific style for the AI Solar System Evolution Sim thumbnail to match placeholder size */
-.ai-sim-thumbnail {
-height: 250px; /* Fixed height for this specific thumbnail */
-object-fit: cover; /* Crop to fit the fixed height */
-}
+        /* Specific style for the AI Solar System Evolution Sim thumbnail to match placeholder size */
+        .ai-sim-thumbnail {
+            height: 250px; /* Fixed height for this specific thumbnail */
+            object-fit: cover; /* Crop to fit the fixed height */
+        }
 
-/* Styles for sub-titles (Thumbnail titles) */
-h2 {
-font-size: 1.8rem; /* Slightly smaller font size for sub-title */
-font-weight: 700; /* Bold font weight */
-color: #374151; /* Medium dark text color */
-margin-top: 15px; /* Space above the sub-title */
-margin-bottom: 10px; /* Space below the sub-title */
-line-height: 1.3; /* Adjust line height */
-flex-grow: 1; /* Allow title to take available vertical space */
-}
+        /* Styles for sub-titles (Thumbnail titles) */
+        h2 {
+            font-size: 1.8rem; /* Slightly smaller font size for sub-title */
+            font-weight: 700; /* Bold font weight */
+            color: #374151; /* Medium dark text color */
+            margin-top: 15px; /* Space above the sub-title */
+            margin-bottom: 10px; /* Space below the sub-title */
+            line-height: 1.3; /* Adjust line height */
+            flex-grow: 1; /* Allow title to take available vertical space */
+        }
 
-/* Styles for paragraphs/descriptions */
-p {
-font-size: 1rem; /* Smaller font size for description */
-color: #4B5563; /* Slightly lighter text color */
-line-height: 1.5; /* Improve readability with line height */
-margin-bottom: 0; /* Remove default bottom margin */
-}
+        /* Styles for paragraphs/descriptions */
+        p {
+            font-size: 0.85rem; /* Smaller font size for description */
+            color: #4B5563; /* Slightly lighter text color */
+            line-height: 1.5; /* Improve readability with line height */
+            margin-bottom: 0; /* Remove default bottom margin */
+        }
 
-/* Responsive adjustments for smaller screens */
-@media (min-width: 640px) { /* Small screens and up */
-.thumbnail-item {
-width: calc(50% - 15px); /* Two items per row with gap consideration */
-}
-}
+        /* Responsive adjustments for smaller screens */
+        @media (min-width: 640px) { /* Small screens and up */
+            .thumbnail-item {
+                width: calc(50% - 15px); /* Two items per row with gap consideration */
+            }
+        }
 
-@media (min-width: 1024px) { /* Large screens and up */
-.thumbnail-item {
-width: calc(33.333% - 20px); /* Three items per row with gap consideration */
-}
-}
-</style>
+        @media (min-width: 1024px) { /* Large screens and up */
+            .thumbnail-item {
+                width: calc(33.333% - 20px); /* Three items per row with gap consideration */
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-<h1>Hotsnow3241's Page</h1>
+    <div class="container">
+        <h1>Hotsnow3241's Page</h1>
 
-<img src="PFP.png" alt="Hotsnow3241's Profile Picture" class="profile-image">
+        <img src="PFP.png" alt="Hotsnow3241's Profile Picture" class="profile-image">
 
-<div class="thumbnails-grid">
-<div class="thumbnail-item">
-<a href="https://hotsnow3241.github.io/AI-SolarSystemEvolutionSim/" class="simulation-link" target="_blank" rel="noopener noreferrer">
-<img src="AI-SolarSystemEvolutionSim.png" alt="AI Solar System Evolution Simulation Thumbnail" class="ai-sim-thumbnail">
-</a>
-<h2>Hotsnow3241's AI-Generated Solar System Evolution Sim</h2>
-<p>A Solar System Evolution Simulation made Mostly with Gemini.</p>
-</div>
+        <div class="thumbnails-grid">
+            <div class="thumbnail-item">
+                <a href="https://hotsnow3241.github.io/AI-SolarSystemEvolutionSim/" class="simulation-link" target="_blank" rel="noopener noreferrer">
+                    <img src="AI-SolarSystemEvolutionSim.png" alt="AI Solar System Evolution Simulation Thumbnail" class="ai-sim-thumbnail">
+                </a>
+                <h2>Hotsnow3241's AI-Generated Solar System Evolution Sim</h2>
+                <p>A Solar System Evolution Simulation made Mostly with Gemini.</p>
+            </div>
 
-<!--
-<div class="thumbnail-item">
-<a href="#" class="simulation-link">
-<img src="https://placehold.co/400x250/E0E0E0/666666?text=Coming+Soon" alt="Placeholder Thumbnail" class="simulation-link-image">
-</a>
-<h2>Another Project Title</h2>
-<p>Description for another exciting project here!</p>
-</div>
+            <!--
+            <div class="thumbnail-item">
+                <a href="#" class="simulation-link">
+                    <img src="https://placehold.co/400x250/E0E0E0/666666?text=Coming+Soon" alt="Placeholder Thumbnail" class="simulation-link-image">
+                </a>
+                <h2>Another Project Title</h2>
+                <p>Description for another exciting project here!</p>
+            </div>
 
-<div class="thumbnail-item">
-<a href="#" class="simulation-link">
-<img src="https://placehold.co/400x250/D0D0D0/555555?text=New+Idea" alt="Placeholder Thumbnail" class="simulation-link-image">
-</a>
-<h2>My Next Big Idea</h2>
-<p>Stay tuned for updates on this innovative concept.</p>
-</div>
--->
-</div>
-</div>
+            <div class="thumbnail-item">
+                <a href="#" class="simulation-link">
+                    <img src="https://placehold.co/400x250/D0D0D0/555555?text=New+Idea" alt="Placeholder Thumbnail" class="simulation-link-image">
+                </a>
+                <h2>My Next Big Idea</h2>
+                <p>Stay tuned for updates on this innovative concept.</p>
+            </div>
+            -->
+        </div>
+    </div>
 </body>
 </html>
-
-
