@@ -60,17 +60,53 @@
             display: block; /* Ensure it behaves as a block element for centering */
         }
 
-        /* Container for multiple thumbnails */
+        /* New container for the thumbnails section */
+        .thumbnails-section-box {
+            background-color: rgba(255, 255, 255, 0.7); /* Slightly opaque background for the box */
+            border-radius: 12px; /* Rounded corners */
+            padding: 20px; /* Padding inside the box */
+            margin-top: 30px; /* Space above this new box */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        /* Container for multiple thumbnails - now a scrollable track */
         .thumbnails-grid {
             display: flex; /* Use flexbox for layout */
-            flex-wrap: wrap; /* Allow items to wrap to the next line */
-            justify-content: center; /* Center items horizontally */
+            flex-wrap: nowrap; /* Prevent items from wrapping, forcing a single line */
+            justify-content: flex-start; /* Align items to the start (left) */
             gap: 30px; /* Space between thumbnail items */
-            margin-top: 40px; /* Space above the thumbnail grid */
+            /* margin-top: 40px; -- Moved into .thumbnails-section-box padding */
+            overflow-x: auto; /* Enable horizontal scrolling */
+            padding-bottom: 15px; /* Add padding for scrollbar visibility */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            /* Optional: Customize scrollbar appearance */
+            scrollbar-width: thin; /* Firefox */
+            scrollbar-color: #60A5FA #f1f1f1; /* Firefox thumb and track colors */
         }
+
+        /* Webkit (Chrome, Safari) scrollbar styles */
+        .thumbnails-grid::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .thumbnails-grid::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .thumbnails-grid::-webkit-scrollbar-thumb {
+            background: #60A5FA;
+            border-radius: 10px;
+        }
+
+        .thumbnails-grid::-webkit-scrollbar-thumb:hover {
+            background: #3B82F6;
+        }
+
 
         /* Styles for individual thumbnail blocks */
         .thumbnail-item {
+            flex-shrink: 0; /* Prevent items from shrinking, allowing horizontal scroll */
             width: 100%; /* Default to full width on small screens */
             max-width: 400px; /* Max width for each thumbnail item */
             background-color: #f9fafb; /* Light background for each item */
@@ -82,6 +118,7 @@
             display: flex; /* Use flexbox to organize content within the item */
             flex-direction: column; /* Stack content vertically */
             align-items: center; /* Center content horizontally within the item */
+            text-align: left; /* Align text within thumbnail items to the left */
         }
 
         .thumbnail-item:hover {
@@ -115,6 +152,7 @@
             margin-bottom: 10px; /* Space below the sub-title */
             line-height: 1.3; /* Adjust line height */
             flex-grow: 1; /* Allow title to take available vertical space */
+            width: 100%; /* Ensure title takes full width within thumbnail item */
         }
 
         /* Styles for paragraphs*/
@@ -123,23 +161,30 @@
             color: #4B5563; /* Slightly lighter text color */
             line-height: 1.5; /* Improve readability with line height */
             margin-bottom: 0; /* Remove default bottom margin */
+            width: 100%; /* Ensure paragraph takes full width within thumbnail item */
         }
 
         /* New style for descriptions specifically */
         desc {
             font-size: 0.7rem; /* Very small font size for the AI Sim description */
+            color: #4B5563; /* Ensure color is set for this custom tag */
+            line-height: 1.5; /* Ensure line height is set for this custom tag */
+            display: block; /* Make it a block element to respect margin/padding */
+            margin-top: 0; /* Adjust as needed */
+            width: 100%; /* Ensure custom description tag takes full width within thumbnail item */
         }
 
         /* Responsive adjustments for smaller screens */
         @media (min-width: 640px) { /* Small screens and up */
             .thumbnail-item {
-                width: calc(50% - 15px); /* Two items per row with gap consideration */
+                /* On smaller screens, they will still take full width if needed,
+                   but flex-shrink: 0 ensures they don't collapse */
             }
         }
 
         @media (min-width: 1024px) { /* Large screens and up */
             .thumbnail-item {
-                width: calc(33.333% - 20px); /* Three items per row with gap consideration */
+                /* On larger screens, they will maintain their max-width */
             }
         }
     </style>
@@ -150,33 +195,53 @@
 
         <img src="PFP.png" alt="Hotsnow3241's Profile Picture" class="profile-image">
 
-        <div class="thumbnails-grid">
-            <div class="thumbnail-item">
-                <a href="https://hotsnow3241.github.io/AI-SolarSystemEvolutionSim/" class="simulation-link" target="_blank" rel="noopener noreferrer">
-                    <img src="AI-SolarSystemEvolutionSim.png" alt="AI Solar System Evolution Simulation Thumbnail" class="ai-sim-thumbnail">
-                </a>
-                <h2>Hotsnow3241's AI-Generated Solar System Evolution Sim</h2>
-                <desc>A solar system evolution simulation made mostly with Gemini.</desc
-            </div>
+        <!-- New box for the thumbnails section -->
+        <div class="thumbnails-section-box">
+            <div class="thumbnails-grid" id="thumbnailsGrid">
+                <div class="thumbnail-item">
+                    <a href="https://hotsnow3241.github.io/AI-SolarSystemEvolutionSim/" class="simulation-link" target="_blank" rel="noopener noreferrer">
+                        <img src="AI-SolarSystemEvolutionSim.png" alt="Solar System Evolution Simulation" class="ai-sim-thumbnail">
+                    </a>
+                    <h2>AI-Generated Solar System Evolution Sim</h2>
+                    <desc>A solar system evolution simulation made mostly with Gemini.</desc>
+                </div>
 
-            <!--
-            <div class="thumbnail-item">
-                <a href="#" class="simulation-link">
-                    <img src="https://placehold.co/400x250/E0E0E0/666666?text=Coming+Soon" alt="Placeholder Thumbnail" class="simulation-link-image">
-                </a>
-                <h2>Another Project Title</h2>
-                <p>Description for another exciting project here!</p>
-            </div>
+                <div class="thumbnail-item">
+                    <a href="#" class="simulation-link">
+                        <img src="https://placehold.co/400x250/E0E0E0/666666?text=Coming+Soon" alt="Coming Soon!" class="simulation-link-image">
+                    </a>
+                    <h2>Another Project Title</h2>
+                    <p>Description for another exciting project here!</p>
+                </div>
 
-            <div class="thumbnail-item">
-                <a href="#" class="simulation-link">
-                    <img src="https://placehold.co/400x250/D0D0D0/555555?text=New+Idea" alt="Placeholder Thumbnail" class="simulation-link-image">
-                </a>
-                <h2>My Next Big Idea</h2>
-                <p>Stay tuned for updates on this innovative concept.</p>
+                <!-- The last thumbnail item is still hidden as per previous request. -->
+                <!--
+                <div class="thumbnail-item">
+                    <a href="#" class="simulation-link">
+                        <img src="https://placehold.co/400x250/D0D0D0/555555?text=New+Idea" alt="Placeholder Thumbnail" class="simulation-link-image">
+                    </a>
+                    <h2>My Next Big Idea</h2>
+                    <p>Stay tuned for updates on this innovative concept.</p>
+                </div>
+                -->
             </div>
-            -->
         </div>
     </div>
+
+    <script>
+        // Get a reference to the thumbnails grid
+        const thumbnailsGrid = document.getElementById('thumbnailsGrid');
+
+        // Add a wheel event listener to the grid
+        thumbnailsGrid.addEventListener('wheel', (event) => {
+            // Prevent the default vertical scrolling behavior of the page
+            event.preventDefault();
+
+            // Adjust the horizontal scroll position based on the vertical scroll amount
+            // event.deltaY is the vertical scroll amount (positive for down, negative for up)
+            // Multiply by a factor (e.g., 0.5) to control the scroll speed
+            thumbnailsGrid.scrollLeft += event.deltaY * -0.5;
+        });
+    </script>
 </body>
 </html>
