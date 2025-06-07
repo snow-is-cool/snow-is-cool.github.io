@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotsnow3241's Page</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>Snow's Homepage</title>
+    <!-- Import Lato font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom styles for the body and container */
@@ -15,22 +16,20 @@
             background-repeat: no-repeat; /* Do not repeat the image */
             background-attachment: fixed; /* Keep background fixed while scrolling */
             background-color: #FFFFFF; /* Fallback color set to white */
-            font-family: 'Inter', sans-serif; /* Use Inter font */
+            font-family: 'Lato', sans-serif; /* Set font to Lato for the entire page */
             color: #333; /* Dark gray text color */
-            text-align: center; /* Center align all text content */
+            text-align: center; /* Center align all text content (including inline elements) */
             margin: 0; /* Remove default body margin */
-            padding: 20px; /* Add padding around the content */
+            padding: 0; /* Remove padding from body */
             min-height: 100vh; /* Ensure body takes at least full viewport height */
-            display: flex; /* Use flexbox for centering content */
-            justify-content: center; /* Center horizontally */
-            align-items: flex-start; /* Align to the top vertically */
+            display: block; /* Allows elements to take full width */
             box-sizing: border-box; /* Include padding in element's total width and height */
         }
 
         .container {
             max-width: 960px; /* Increased max-width for more space for thumbnails */
             width: 100%; /* Make container fluid */
-            margin-top: 20px; /* Margin from the top */
+            margin: 20px auto; /* Center the container with auto margins */
             padding: 30px; /* Increased padding inside the container */
             background-color: rgba(255, 255, 255, 0.4); /* Slightly opaque white background (alpha changed to 0.8) */
             border-radius: 16px; /* More rounded corners for the container */
@@ -38,14 +37,12 @@
             box-sizing: border-box; /* Include padding in element's total width and height */
         }
 
-        /* Styles for main titles (Hotsnow3241's Page) */
-        h1 {
-            font-size: 3.5rem; /* Very large font size for main title */
-            font-weight: 800; /* Extra bold font weight */
-            color: #1F2937; /* Darker text color */
-            margin-top: 0; /* Remove default top margin */
-            margin-bottom: 30px; /* Space below the main title */
-            line-height: 1.1; /* Tighter line height for large text */
+        /* Styles for the "Snow's Homepage" image */
+        .homepage-title-image {
+            display: block; /* Make it a block element to apply margin auto */
+            margin: 0 auto 20px auto; /* Center horizontally with auto margins, add vertical spacing below */
+            /* Width and height are now set dynamically via JavaScript based on screen size */
+            /* overflow: hidden; is removed as the image source will handle correct dimensions */
         }
 
         /* Styles for profile image */
@@ -55,7 +52,7 @@
             border-radius: 50%; /* Make it circular */
             object-fit: cover; /* Cover the area without distortion */
             margin: 0 auto 25px auto; /* Center the image and add space below */
-            border: 4px solid #FFFFFF; /* Blue border around the profile picture changed to white */
+            border: 4px solid #FFFFFF; /* White border around the profile picture */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25); /* More prominent shadow for profile image */
             display: block; /* Ensure it behaves as a block element for centering */
         }
@@ -190,16 +187,16 @@
 </head>
 <body>
     <div class="container">
-        <h1>Hotsnow3241's Page</h1>
-
-        <img src="PFP.png" alt="Hotsnow3241's Profile Picture" class="profile-image">
+        <!-- The img tag's src will be updated by JavaScript for dynamic sizing -->
+        <img src="https://placehold.co/500x60/transparent/000000?text=Snow's+Homepage" alt="Snow's Homepage Title" class="homepage-title-image">
+        <img src="PFP.png" alt="Snow's Profile Picture" class="profile-image">
 
         <!-- New box for the thumbnails section -->
         <div class="thumbnails-section-box">
             <div class="thumbnails-grid" id="thumbnailsGrid">
                 <div class="thumbnail-item">
                     <!-- Removed target="_blank" and rel="noopener noreferrer" -->
-                    <a href="https://hotsnow3241.github.io/AI-SolarSystemEvolutionSim/" class="simulation-link">
+                    <a href="https://snow-is-cool.github.io/AI-SolarSystemEvolutionSim/" class="simulation-link">
                         <img src="AI-SolarSystemEvolutionSim.png" alt="Solar System Evolution Simulation" class="ai-sim-thumbnail">
                     </a>
                     <h2>AI-Generated Solar System Evolution Sim</h2>
@@ -208,7 +205,7 @@
 
                 <div class="thumbnail-item">
                     <a href="#" class="simulation-link">
-                        <img src="https://placehold.co/400x250/E0E0E0/666666?text=Coming+Soon" alt="Coming Soon!" class="simulation-link-image">
+                        <img src="https://placehold.co/400x250/E0E0E0/666666?text=Coming+Soon" alt="Coming+Soon!" class="simulation-link-image">
                     </a>
                     <h2>Coming Soon!</h2>
                     <p> </p>
@@ -242,6 +239,32 @@
             // Reverted scroll speed to 1
             thumbnailsGrid.scrollLeft += event.deltaY * 1;
         });
+
+        // Function to update the title image source dynamically
+        function updateTitleImageSize() {
+            const titleImage = document.querySelector('.homepage-title-image');
+            // Calculate 2/3 of the screen width
+            let dynamicWidth = window.innerWidth * (2 / 3);
+
+            // Apply min/max constraints to the dynamic width for readability
+            const minWidth = 200; // Minimum width in pixels
+            const maxWidth = 1000; // Maximum width in pixels
+            dynamicWidth = Math.max(minWidth, Math.min(dynamicWidth, maxWidth));
+
+            // Maintain aspect ratio (original was 500x75, but previous request cropped to 500x60.
+            // So, using 500x60 as the desired aspect ratio: 60 / 500 = 0.12)
+            let dynamicHeight = Math.round(dynamicWidth * (60 / 500));
+
+            // Construct the new image URL with dynamic dimensions
+            const newSrc = `https://placehold.co/${Math.round(dynamicWidth)}x${dynamicHeight}/transparent/000000?text=Snow's+Homepage`;
+            titleImage.src = newSrc;
+        }
+
+        // Call the function on page load to set initial size
+        updateTitleImageSize();
+
+        // Call the function on window resize to adjust dynamically
+        window.addEventListener('resize', updateTitleImageSize);
     </script>
 </body>
 </html>
