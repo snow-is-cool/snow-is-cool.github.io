@@ -188,7 +188,7 @@
 <body>
     <div class="container">
         <!-- The img tag's src will be updated by JavaScript for dynamic sizing -->
-        <img src="https://placehold.co/500x60/transparent/FFFFFF?text=Snow's+Homepage" alt="Snow's Homepage Title" class="homepage-title-image">
+        <img src="https://placehold.co/500x60/transparent/FFFFFF?text=Snow's+Github" alt="Snow's Github Title" class="homepage-title-image">
         <img src="PFP.png" alt="Snow's Profile Picture" class="profile-image">
 
         <!-- New box for the thumbnails section -->
@@ -202,6 +202,16 @@
                     <h2>AI-Generated Solar System Evolution Sim</h2>
                     <desc>A solar system evolution simulation made mostly with Gemini.</desc>
                 </div>
+
+                <!-- UPDATED: Prime Utils Card now uses the specified image file name -->
+                <div class="thumbnail-item">
+                    <a href="https://snow-is-cool.github.io/AI-PrimeUtils" class="simulation-link">
+                        <img src="AI-PrimeUtils.png" alt="Prime Utils Thumbnail" class="ai-sim-thumbnail">
+                    </a>
+                    <h2>Prime Utils</h2>
+                    <desc>A utility page focused on prime number tools and algorithms.</desc>
+                </div>
+                <!-- END NEW CARD -->
 
                 <div class="thumbnail-item">
                     <a href="#" class="simulation-link">
@@ -255,8 +265,9 @@
             // So, using 500x60 as the desired aspect ratio: 60 / 500 = 0.12)
             let dynamicHeight = Math.round(dynamicWidth * (60 / 500));
 
-            // Construct the new image URL with dynamic dimensions
-            const newSrc = `https://placehold.co/${Math.round(dynamicWidth)}x${dynamicHeight}/transparent/FFFFFF?text=Snow's+Homepage`;
+            // Construct the new image URL with dynamic dimensions. Changed text to "Snow's Github"
+            // Text color is set to white (FFFFFF)
+            const newSrc = `https://placehold.co/${Math.round(dynamicWidth)}x${dynamicHeight}/transparent/FFFFFF?text=Snow's+Github`;
             titleImage.src = newSrc;
         }
 
@@ -268,4 +279,3 @@
     </script>
 </body>
 </html>
-
